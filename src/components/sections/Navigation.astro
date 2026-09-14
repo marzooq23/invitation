@@ -1,4 +1,6 @@
 ---
+import { Icon } from 'astro-icon/components';
+
 const sections = [
   { id: "landing", label: "Home" },
   { id: "nikkah-english", label: "Nikkah" },
@@ -28,3 +30,11 @@ const sections = [
     </a>
   ))}
 </nav>
+
+<!-- Animated scroll cue (visual only, not clickable) -->
+<div
+  class="pointer-events-none fixed bottom-6 right-0 z-40 flex h-8 w-8 items-center justify-center text-gold md:right-2"
+  aria-hidden="true"
+>
+  <Icon name="lucide:chevrons-down" class="h-6 w-6 animate-bounce" />
+</div>
