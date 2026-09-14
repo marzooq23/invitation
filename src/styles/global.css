@@ -1,1 +1,85 @@
 @import "tailwindcss";
+
+@theme {
+  --color-ivory: #FDFBF5;
+  --color-ivory-dark: #F5F0E6;
+  --color-gold: #C9A84C;
+  --color-gold-light: #E8D5A3;
+  --color-gold-dark: #8B6914;
+  --color-charcoal: #2C2C2C;
+  --color-warm-gray: #6B6560;
+  --color-warm-gray-light: #9B9590;
+
+  --font-display: "Cormorant Garamond", "Georgia", serif;
+  --font-body: "Noto Sans", sans-serif;
+  --font-arabic: "Amiri", serif;
+  --font-tamil: "Noto Sans Tamil", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-charcoal);
+  background-color: var(--color-ivory);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: var(--color-gold-light);
+  color: var(--color-charcoal);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-arabic {
+  font-family: var(--font-arabic);
+}
+
+.font-tamil {
+  font-family: var(--font-tamil);
+}
+
+.gold-divider {
+  width: 80px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+}
+
+.gold-divider-wide {
+  width: 160px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s ease-out forwards;
+}
+
+.section-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.section-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

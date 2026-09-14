@@ -1,17 +1,105 @@
 ---
-
+import WeddingLayout from "../layouts/WeddingLayout.astro";
+import Navigation from "../components/sections/Navigation.astro";
+import Landing from "../components/sections/Landing.astro";
+import NikkahEnglish from "../components/sections/NikkahEnglish.astro";
+import NikkahTamil from "../components/sections/NikkahTamil.astro";
+import Events from "../components/sections/Events.astro";
+import Venue from "../components/sections/Venue.astro";
+import ThingsToKnow from "../components/sections/ThingsToKnow.astro";
+import DuasAndThanks from "../components/sections/DuasAndThanks.astro";
+import "../styles/global.css";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<WeddingLayout>
+  <Navigation />
+
+  <main>
+    <Landing />
+    <NikkahEnglish />
+    <NikkahTamil />
+    <Events />
+    <Venue />
+    <ThingsToKnow />
+    <DuasAndThanks />
+  </main>
+
+  <script is:inline>
+    // Countdown timer — target: 20 Dec 2026, 11:30 AM IST (UTC+5:30)
+    (function () {
+      const target = new Date("2026-12-20T11:30:00+05:30").getTime();
+      const daysEl = document.getElementById("cd-days");
+      const hoursEl = document.getElementById("cd-hours");
+      const minsEl = document.getElementById("cd-mins");
+      const secsEl = document.getElementById("cd-secs");
+      const countdownEl = document.getElementById("countdown");
+
+      function pad(n) { return String(n).padStart(2, "0"); }
+
+      function tick() {
+        const now = Date.now();
+        const diff = target - now;
+
+        if (diff <= 0) {
+          countdownEl.style.display = "none";
+          return;
+        }
+
+        const d = Math.floor(diff / 86400000);
+        const h = Math.floor((diff % 86400000) / 3600000);
+        const m = Math.floor((diff % 3600000) / 60000);
+        const s = Math.floor((diff % 60000) / 1000);
+
+        daysEl.textContent = d;
+        hoursEl.textContent = pad(h);
+        minsEl.textContent = pad(m);
+        secsEl.textContent = pad(s);
+      }
+
+      tick();
+      setInterval(tick, 1000);
+    })();
+
+    // Intersection Observer — section reveal + nav dot highlight
+    (function () {
+      // Section reveal
+      const revealObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+
+      document.querySelectorAll(".section-reveal").forEach((el) => {
+        revealObserver.observe(el);
+      });
+
+      // Nav dot highlight
+      const navDots = document.querySelectorAll(".nav-dot");
+      const sectionIds = Array.from(navDots).map((dot) => dot.dataset.section);
+
+      const navObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const id = entry.target.id;
+              navDots.forEach((dot) => {
+                dot.classList.toggle("nav-dot-active", dot.dataset.section === id);
+              });
+            }
+          });
+        },
+        { threshold: 0.3 }
+      );
+
+      sectionIds.forEach((id) => {
+        const section = document.getElementById(id);
+        if (section) navObserver.observe(section);
+      });
+    })();
+  </script>
+</WeddingLayout>

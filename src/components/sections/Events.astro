@@ -1,0 +1,44 @@
+---
+const events = [
+  { time: "11:30 AM", name: "Nikkah", description: "The sacred marriage ceremony" },
+  { time: "12:00 PM", name: "Bayan", description: "Eloquent speech" },
+  { time: "12:30 PM", name: "Walima", description: "Wedding feast" },
+  { time: "1:00 PM", name: "Luhar", description: "Prayer" },
+];
+---
+
+<section id="events" class="section-reveal min-h-dvh flex flex-col items-center px-6 py-20">
+  <div class="flex flex-col items-center gap-8 max-w-md mx-auto w-full">
+
+    <div class="flex flex-col items-center gap-2 text-center">
+      <p class="font-body text-xs tracking-[0.25em] text-gold-dark uppercase">Schedule</p>
+      <h2 class="font-display text-3xl text-charcoal md:text-4xl">Wedding Events</h2>
+      <div class="gold-divider"></div>
+      <p class="font-body text-xs text-warm-gray">20 December 2026</p>
+    </div>
+
+    <div class="relative w-full mt-4">
+      <!-- Vertical line on the left -->
+      <div class="absolute left-4 top-0 bottom-0 w-px bg-gold-light"></div>
+
+      {events.map((event) => (
+        <div class="relative flex items-start gap-6 mb-10 last:mb-0">
+          <!-- Dot -->
+          <div class="absolute left-4 -translate-x-1/2 w-3 h-3 rounded-full bg-gold border-2 border-ivory z-10 mt-1"></div>
+
+          <!-- Time (left) -->
+          <div class="pl-10 md:pl-12 md:w-40 shrink-0">
+            <p class="font-display text-lg text-gold-dark">{event.time}</p>
+          </div>
+
+          <!-- Content (right) -->
+          <div>
+            <h3 class="font-display text-xl text-charcoal">{event.name}</h3>
+            <p class="font-body text-sm text-warm-gray mt-1">{event.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

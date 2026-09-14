@@ -1,0 +1,30 @@
+---
+const sections = [
+  { id: "landing", label: "Home" },
+  { id: "nikkah-english", label: "Nikkah" },
+  { id: "nikkah-tamil", label: "நிக்காஹ்" },
+  { id: "events", label: "Events" },
+  { id: "venue", label: "Venue" },
+  { id: "things-to-know", label: "Info" },
+  { id: "duas-and-thanks", label: "Thanks" },
+];
+---
+
+<nav
+  class="fixed right-3 top-1/2 -translate-y-1/2 z-50 flex flex-col items-center gap-3 md:right-5 md:gap-4"
+  aria-label="Section navigation"
+>
+  {sections.map((s) => (
+    <a
+      href={`#${s.id}`}
+      class="nav-dot group relative flex items-center justify-center"
+      data-section={s.id}
+      aria-label={s.label}
+    >
+      <span class="block h-2 w-2 rounded-full bg-warm-gray-light transition-all duration-300 group-hover:bg-gold nav-dot-active:bg-gold nav-dot-active:h-3 nav-dot-active:w-3"></span>
+      <span class="absolute right-6 whitespace-nowrap rounded bg-charcoal px-2 py-1 text-xs text-ivory opacity-0 transition-opacity duration-200 group-hover:opacity-100 pointer-events-none md:text-sm">
+        {s.label}
+      </span>
+    </a>
+  ))}
+</nav>

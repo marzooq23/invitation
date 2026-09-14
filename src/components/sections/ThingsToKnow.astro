@@ -1,0 +1,58 @@
+---
+const items = [
+  {
+    title: "Dress Code",
+    detail: "Traditional & Formal attire welcome.",
+    icon: "👔",
+  },
+  {
+    title: "Arrival",
+    detail: "Please arrive 15 minutes before the ceremony.",
+    icon: "🕐",
+  },
+  {
+    title: "Parking",
+    detail: "Bike and Car parking available inside premises.",
+    icon: "🅿️",
+  },
+  {
+    title: "Prayer",
+    detail: "Men's Prayer Hall available near Men's Hall. Luhar (Prayer) starts at 1:00 PM.",
+    icon: "🕌",
+  },
+  {
+    title: "Dining",
+    detail: "Lunch options available — Vegetarian & Non-vegetarian.",
+    icon: "🍽️",
+  },
+  {
+    title: "Photography",
+    detail: "We kindly request guests not to take pictures of the Bride or during the ceremony. Professional photos will be shared post-marriage, Inshallah.",
+    icon: "📸",
+  },
+];
+---
+
+<section id="things-to-know" class="section-reveal flex flex-col items-center px-6 py-20">
+  <div class="flex flex-col items-center gap-8 max-w-lg mx-auto w-full">
+
+    <div class="flex flex-col items-center gap-2 text-center">
+      <p class="font-body text-xs tracking-[0.25em] text-gold-dark uppercase">Guest Info</p>
+      <h2 class="font-display text-3xl text-charcoal md:text-4xl">Things to Know</h2>
+      <div class="gold-divider"></div>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full mt-2">
+      {items.map((item) => (
+        <div class="flex flex-col gap-2 rounded-lg border border-ivory-dark bg-white/50 p-5 transition-shadow hover:shadow-md">
+          <div class="flex items-center gap-2">
+            <span class="text-lg" aria-hidden="true">{item.icon}</span>
+            <h3 class="font-display text-base text-charcoal">{item.title}</h3>
+          </div>
+          <p class="font-body text-sm text-warm-gray leading-relaxed">{item.detail}</p>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
