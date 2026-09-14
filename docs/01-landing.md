@@ -61,7 +61,7 @@ Display the primary wedding date prominently.
 
 Date: `20 DECEMBER 2026`
 
-## Optional Countdown
+## Countdown
 
 A countdown may be included if the wedding is in the future.
 

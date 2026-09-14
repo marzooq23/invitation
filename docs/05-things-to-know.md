@@ -65,7 +65,7 @@ Optional:
 ```text
 [Photography guidance]
 
-We encourage the guest not to take any pictures of Bride or Guests during the ceremony.
+We encourage the guest strictly not to take any pictures of Bride or Guests during the ceremony.
 
 We will share the pictures taken by the professional photographers post marriage Inshallah.
 ```
