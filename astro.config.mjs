@@ -7,6 +7,8 @@ import icon from 'astro-icon';
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://marzooq23.github.io',
+  base: '/invitation/',
   integrations: [icon()],
   vite: {
     plugins: [tailwindcss()]
