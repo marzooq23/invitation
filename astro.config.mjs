@@ -7,7 +7,7 @@ import icon from 'astro-icon';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://marzooqwedsfarwizah.github.io',
+  site: 'https://marzooq-weds-farwizah.github.io',
   base: '/',
   integrations: [icon()],
   vite: {
