@@ -37,6 +37,58 @@ const {
     />
   </head>
   <body class="min-h-dvh bg-ivory text-charcoal">
+    <div
+      id="theme-switcher"
+      class="fixed right-3 top-3 z-[60] flex items-center gap-2 rounded-full border border-ivory-dark bg-white/70 px-3 py-1.5 backdrop-blur md:right-5"
+      aria-label="Preview wedding color themes"
+    >
+      <svg class="h-4 w-4 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="13.5" cy="6.5" r=".5" fill="currentColor" />
+        <circle cx="17.5" cy="10.5" r=".5" fill="currentColor" />
+        <circle cx="8.5" cy="7.5" r=".5" fill="currentColor" />
+        <circle cx="6.5" cy="12.5" r=".5" fill="currentColor" />
+        <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z" />
+      </svg>
+      <select
+        id="theme-select"
+        class="cursor-pointer bg-transparent font-body text-xs font-medium uppercase tracking-widest text-charcoal focus:outline-none [&>option]:text-charcoal"
+        aria-label="Choose color theme"
+      >
+        <option value="classic">Classic Gold</option>
+        <option value="rose">Rose Blush</option>
+        <option value="emerald">Emerald Garden</option>
+        <option value="terracotta">Terracotta</option>
+        <option value="plum">Plum Dusk</option>
+        <option value="navy">Midnight Navy</option>
+        <option value="maroon">Velvet Maroon</option>
+        <option value="sage">Soft Sage</option>
+        <option value="champagne">Champagne</option>
+        <option value="violet">Lavender</option>
+        <option value="teal">Ocean Teal</option>
+        <option value="mocha">Mocha</option>
+        <option value="blush">Blush Pink</option>
+        <option value="dusty-blue">Dusty Blue</option>
+        <option value="amber">Sunset Amber</option>
+        <option value="berry">Berry Bloom</option>
+        <option value="fern">Forest Fern</option>
+        <option value="slate">Cool Slate</option>
+        <option value="peach">Peach Bloom</option>
+        <option value="mint">Mint Breeze</option>
+      </select>
+    </div>
     <slot />
+    <script>
+      const select = document.getElementById("theme-select");
+      const saved = localStorage.getItem("wedding-theme");
+      if (saved && select) {
+        document.documentElement.dataset.theme = saved;
+        select.value = saved;
+      }
+      select?.addEventListener("change", () => {
+        const t = select.value;
+        document.documentElement.dataset.theme = t;
+        try { localStorage.setItem("wedding-theme", t); } catch {}
+      });
+    </script>
   </body>
 </html>

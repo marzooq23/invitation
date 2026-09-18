@@ -16,6 +16,218 @@
   --font-tamil: "Noto Sans Tamil", sans-serif;
 }
 
+/* Preview themes — override tokens by setting data-theme on <html>.
+   Each theme tints the ink (charcoal/warm-gray) as well as the accent.
+   Remove once the theme is chosen and sunk into @theme above. */
+:root[data-theme="rose"] {
+  --color-ivory: #FDF1EF;
+  --color-ivory-dark: #F6E2DF;
+  --color-gold: #B35468;
+  --color-gold-light: #E7B5C0;
+  --color-gold-dark: #8E3D54;
+  --color-charcoal: #3B232E;
+  --color-warm-gray: #7A5965;
+  --color-warm-gray-light: #A8919A;
+}
+
+:root[data-theme="emerald"] {
+  --color-ivory: #F3F8F4;
+  --color-ivory-dark: #E5EFE8;
+  --color-gold: #2F6B4F;
+  --color-gold-light: #A9CDB6;
+  --color-gold-dark: #1F4A35;
+  --color-charcoal: #22352B;
+  --color-warm-gray: #5C7165;
+  --color-warm-gray-light: #8EA096;
+}
+
+:root[data-theme="terracotta"] {
+  --color-ivory: #FBF5EC;
+  --color-ivory-dark: #F2E7D6;
+  --color-gold: #A85C33;
+  --color-gold-light: #E6C29D;
+  --color-gold-dark: #7D4420;
+  --color-charcoal: #3C2E24;
+  --color-warm-gray: #79644F;
+  --color-warm-gray-light: #A2907C;
+}
+
+:root[data-theme="plum"] {
+  --color-ivory: #F9F4F9;
+  --color-ivory-dark: #F0E5F0;
+  --color-gold: #7C4F74;
+  --color-gold-light: #C9ADC2;
+  --color-gold-dark: #55334F;
+  --color-charcoal: #3A2436;
+  --color-warm-gray: #76556D;
+  --color-warm-gray-light: #A58AA0;
+}
+
+:root[data-theme="navy"] {
+  --color-ivory: #F3F7FC;
+  --color-ivory-dark: #E6EDF6;
+  --color-gold: #33557A;
+  --color-gold-light: #A7BED8;
+  --color-gold-dark: #233C59;
+  --color-charcoal: #1F2C3D;
+  --color-warm-gray: #4E5F76;
+  --color-warm-gray-light: #8C9EB3;
+}
+
+:root[data-theme="maroon"] {
+  --color-ivory: #FCF4F1;
+  --color-ivory-dark: #F5E2DB;
+  --color-gold: #9C3B2E;
+  --color-gold-light: #DBA297;
+  --color-gold-dark: #6C2318;
+  --color-charcoal: #3A2220;
+  --color-warm-gray: #744F47;
+  --color-warm-gray-light: #A08379;
+}
+
+:root[data-theme="sage"] {
+  --color-ivory: #F6F9F2;
+  --color-ivory-dark: #EAF1DF;
+  --color-gold: #6B8F55;
+  --color-gold-light: #C3D6AE;
+  --color-gold-dark: #4A6638;
+  --color-charcoal: #34402C;
+  --color-warm-gray: #68735D;
+  --color-warm-gray-light: #9AA68F;
+}
+
+:root[data-theme="champagne"] {
+  --color-ivory: #FDF7EF;
+  --color-ivory-dark: #F5EBD6;
+  --color-gold: #C49A5C;
+  --color-gold-light: #EAD5A9;
+  --color-gold-dark: #95691F;
+  --color-charcoal: #3B3325;
+  --color-warm-gray: #786A4E;
+  --color-warm-gray-light: #A4987D;
+}
+
+:root[data-theme="violet"] {
+  --color-ivory: #F8F6FC;
+  --color-ivory-dark: #ECE8F7;
+  --color-gold: #6C5BA7;
+  --color-gold-light: #C3B8E6;
+  --color-gold-dark: #4A3D78;
+  --color-charcoal: #2F2A45;
+  --color-warm-gray: #6B6386;
+  --color-warm-gray-light: #9E97B3;
+}
+
+:root[data-theme="teal"] {
+  --color-ivory: #F2F9F8;
+  --color-ivory-dark: #E2F0EF;
+  --color-gold: #2E7D7D;
+  --color-gold-light: #A2D2D2;
+  --color-gold-dark: #1E5555;
+  --color-charcoal: #213A3A;
+  --color-warm-gray: #54706E;
+  --color-warm-gray-light: #8FA6A4;
+}
+
+:root[data-theme="mocha"] {
+  --color-ivory: #F9F5F0;
+  --color-ivory-dark: #EAE1D4;
+  --color-gold: #8A6A4F;
+  --color-gold-light: #CBB59D;
+  --color-gold-dark: #5F4630;
+  --color-charcoal: #3B3129;
+  --color-warm-gray: #746250;
+  --color-warm-gray-light: #A2907D;
+}
+
+:root[data-theme="blush"] {
+  --color-ivory: #FDF6F4;
+  --color-ivory-dark: #F6E8E2;
+  --color-gold: #C96B78;
+  --color-gold-light: #EFC2C8;
+  --color-gold-dark: #A34657;
+  --color-charcoal: #3A2A2E;
+  --color-warm-gray: #7A6268;
+  --color-warm-gray-light: #A9949A;
+}
+
+:root[data-theme="dusty-blue"] {
+  --color-ivory: #F4F7FA;
+  --color-ivory-dark: #E7EEF5;
+  --color-gold: #5E7E9E;
+  --color-gold-light: #AFC4D8;
+  --color-gold-dark: #3F5C79;
+  --color-charcoal: #28343F;
+  --color-warm-gray: #57667A;
+  --color-warm-gray-light: #90A0B4;
+}
+
+:root[data-theme="amber"] {
+  --color-ivory: #FCF6EE;
+  --color-ivory-dark: #F5EAD9;
+  --color-gold: #D9902C;
+  --color-gold-light: #F0D9A9;
+  --color-gold-dark: #A96813;
+  --color-charcoal: #3A3127;
+  --color-warm-gray: #7A6A52;
+  --color-warm-gray-light: #A99985;
+}
+
+:root[data-theme="berry"] {
+  --color-ivory: #FBF5F8;
+  --color-ivory-dark: #F4E8EF;
+  --color-gold: #A94E77;
+  --color-gold-light: #E4B8CE;
+  --color-gold-dark: #7D3158;
+  --color-charcoal: #3A2731;
+  --color-warm-gray: #7A5A68;
+  --color-warm-gray-light: #A98B98;
+}
+
+:root[data-theme="fern"] {
+  --color-ivory: #F4F6F0;
+  --color-ivory-dark: #E6ECDE;
+  --color-gold: #486B3E;
+  --color-gold-light: #B2C99E;
+  --color-gold-dark: #2F4A29;
+  --color-charcoal: #2D3325;
+  --color-warm-gray: #5F6B52;
+  --color-warm-gray-light: #94A087;
+}
+
+:root[data-theme="slate"] {
+  --color-ivory: #F5F6F7;
+  --color-ivory-dark: #E8EBEE;
+  --color-gold: #5A6B7C;
+  --color-gold-light: #B0BDC9;
+  --color-gold-dark: #3E4D5B;
+  --color-charcoal: #2A323B;
+  --color-warm-gray: #5C6873;
+  --color-warm-gray-light: #929DA7;
+}
+
+:root[data-theme="peach"] {
+  --color-ivory: #FDF5F0;
+  --color-ivory-dark: #F6E7DC;
+  --color-gold: #E07F54;
+  --color-gold-light: #F3C4AA;
+  --color-gold-dark: #B2532C;
+  --color-charcoal: #3A2C23;
+  --color-warm-gray: #7A5F4C;
+  --color-warm-gray-light: #AA917F;
+}
+
+:root[data-theme="mint"] {
+  --color-ivory: #F2F8F5;
+  --color-ivory-dark: #E3F0E9;
+  --color-gold: #3D8C76;
+  --color-gold-light: #A9CFC1;
+  --color-gold-dark: #286454;
+  --color-charcoal: #2A3A35;
+  --color-warm-gray: #5C7468;
+  --color-warm-gray-light: #8EA99C;
+}
+
 html {
   scroll-behavior: smooth;
 }
